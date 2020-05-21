@@ -2,8 +2,8 @@ function PSTH = calc_PSTH(event,spikes,varargin)
 % This is a generalized way for creating a PSTH for units for various events
 % 
 % INPUTS
-% event  : event times formatted according to the Cell Explorer's convention
-% spikes : spikes formatted according to the Cell Explorer's convention
+% event  : event times formatted according to the CellExplorer's convention
+% spikes : spikes formatted according to the CellExplorer's convention
 % 
 % OUTPUT
 % psth
@@ -96,7 +96,7 @@ for i = 1:size(PSTH_out,2)
 end
 
 if smoothing>0
-    PSTH_out = nanconv(PSTH_out,gausswin(smoothing)/sum(gausswin(smoothing)),'edge');
+    PSTH_out = nanconv(PSTH_out,ce_gausswin(smoothing)/sum(ce_gausswin(smoothing)),'edge');
 end
 
 [~,modulationPeakResponseTime] = max(PSTH_out);

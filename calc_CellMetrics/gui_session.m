@@ -1,10 +1,10 @@
 function [session,parameters,statusExit] = gui_session(sessionIn,parameters)
-% Displays a GUI allowing you to edit parameters for the Cell Explorer and metadata for a session
+% Displays a GUI allowing you to edit parameters for the CellExplorer and metadata for a session
 % Can be run from a basepath as well (if no inputs are provided).
 %
 % INPUTS
 % sessionIn  : session struct to load into the GUI
-% parameters : specific to the Cell Explorer. Allows you to adjust its parameters from the GUI
+% parameters : specific to the CellExplorer. Allows you to adjust its parameters from the GUI
 %
 % - Example calls:
 % gui_session             % Tries to load session from current path, assumed to be a basepath. If no session struct exist, it will ask for user input
@@ -16,15 +16,15 @@ function [session,parameters,statusExit] = gui_session(sessionIn,parameters)
 % parameters : parameters struct
 % statusExit : Whether the GUI was closed via the OK button or canceled
 
-% gui_session is part of the Cell Explorer: https://petersenpeter.github.io/Cell-Explorer/
+% gui_session is part of the CellExplorer: https://petersenpeter.github.io/CellExplorer/
 
 % By Peter Petersen 
 % petersen.peter@gmail.com
 % Last edited: 16-03-2020
 
 % Lists
-sortingMethodList = {'KiloSort', 'SpikingCircus', 'Klustakwik', 'MaskedKlustakwik'}; % Spike sorting methods
-sortingFormatList = {'Phy', 'KiloSort', 'SpikingCircus', 'Klustakwik', 'KlustaViewer', 'Neurosuite'}; % Spike sorting formats
+sortingMethodList = {'KiloSort', 'SpyKING CIRCUS', 'Klustakwik', 'MaskedKlustakwik'}; % Spike sorting methods
+sortingFormatList = {'Phy', 'KiloSort', 'SpyKING CIRCUS', 'Klustakwik', 'KlustaViewa', 'Neurosuite','MountainSort','IronClust'}; % Spike sorting formats
 inputsTypeList = {'adc', 'aux','dat', 'dig'}; % input data types
 sessionTypesList = {'Chronic', 'Acute'}; % session types
 
@@ -655,7 +655,7 @@ uiwait(UI.fig)
     end
     
     function buttonHelp
-        web('https://petersenpeter.github.io/Cell-Explorer/tutorials/metadata-tutorial/','-new','-browser')
+        web('https://petersenpeter.github.io/CellExplorer/tutorials/metadata-tutorial/','-new','-browser')
     end
     
     function buttonUploadToDB
