@@ -10,7 +10,7 @@ cd(basepath)
 session = sessionTemplate(pwd,'showGUI',true);
 
 %% 3. Run the cell metrics pipeline 'ProcessCellMetrics' using the session struct as input
-cell_metrics = ProcessCellMetrics('session', session);
+cell_metrics = ProcessCellMetrics('session', session,'showGUI',true);
 
 %% 4. Visualize the cell metrics in the Cell Explorer
 cell_metrics = CellExplorer('metrics',cell_metrics); 
